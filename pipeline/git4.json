@@ -1,0 +1,18 @@
+{
+	"name": "git4",
+	"properties": {
+		"activities": [
+			{
+				"name": "Fail1",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "123",
+					"errorCode": "123"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
