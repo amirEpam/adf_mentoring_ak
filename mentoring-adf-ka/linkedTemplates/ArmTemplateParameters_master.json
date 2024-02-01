@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "mentoring-adf-ka"
+		},
+		"LS_ABLB_AK_2_connectionString": {
+			"value": ""
+		},
+		"LS_ABLB_ONLINE_connectionString": {
+			"value": ""
+		},
+		"LS_ADLS_AK_2_accountKey": {
+			"value": ""
+		},
+		"LS_ABLB_AK_properties_typeProperties_sasUri_secretName": {
+			"value": "SAS1"
+		},
+		"LS_ADLS_AK_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeka.dfs.core.windows.net"
+		},
+		"LS_ADLS_AK_2_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeka.dfs.core.windows.net/"
+		},
+		"LS_AKV_AK_properties_typeProperties_baseUrl": {
+			"value": "https://mentoring-key-vault-ka.vault.azure.net/"
+		},
+		"LS_ASQL_AK_properties_typeProperties_connectionString_secretName": {
+			"value": "EtlUserAzureFull"
+		},
+		"LS_ASQL_DATAMART_properties_typeProperties_connectionString_secretName": {
+			"value": "EtlUserAzureFullDataMart"
+		},
+		"LS_SS_properties_typeProperties_connectionString_secretName": {
+			"value": "SSUser"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/bb994079-71ea-46e2-b2b1-53b535ef74ab/resourceGroups/azure-mentoring-ak/providers/Microsoft.Storage/storageAccounts/azurementoringstorageakn"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

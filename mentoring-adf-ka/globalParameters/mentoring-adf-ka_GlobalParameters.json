@@ -1,0 +1,6 @@
+{
+	"LogicAppURL": {
+		"type": "string",
+		"value": "https://mentoring-key-vault-ka.vault.azure.net/secrets/LogicAppURL/3def9e13bd844a49ba6fa517f8f28597?api-version=7.0"
+	}
+}

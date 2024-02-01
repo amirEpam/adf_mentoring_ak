@@ -1,0 +1,159 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "mentoring-adf-ka"
+		},
+		"LS_ABLB_AK_2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_ABLB_AK_2'"
+		},
+		"LS_ABLB_ONLINE_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_ABLB_ONLINE'"
+		},
+		"LS_ADLS_AK_2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_AK_2'"
+		},
+		"LS_ABLB_AK_properties_typeProperties_sasUri_secretName": {
+			"type": "string",
+			"defaultValue": "SAS1"
+		},
+		"LS_ADLS_AK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurementoringdatalakeka.dfs.core.windows.net"
+		},
+		"LS_ADLS_AK_2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://azurementoringdatalakeka.dfs.core.windows.net/"
+		},
+		"LS_AKV_AK_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://mentoring-key-vault-ka.vault.azure.net/"
+		},
+		"LS_ASQL_AK_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "EtlUserAzureFull"
+		},
+		"LS_ASQL_DATAMART_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "EtlUserAzureFullDataMart"
+		},
+		"LS_SS_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "SSUser"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/bb994079-71ea-46e2-b2b1-53b535ef74ab/resourceGroups/azure-mentoring-ak/providers/Microsoft.Storage/storageAccounts/azurementoringstorageakn"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "mentoring-adf-ka_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_ABLB_AK_2_connectionString": {
+						"value": "[parameters('LS_ABLB_AK_2_connectionString')]"
+					},
+					"LS_ABLB_ONLINE_connectionString": {
+						"value": "[parameters('LS_ABLB_ONLINE_connectionString')]"
+					},
+					"LS_ADLS_AK_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_AK_properties_typeProperties_url')]"
+					},
+					"LS_AKV_AK_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_AKV_AK_properties_typeProperties_baseUrl')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "mentoring-adf-ka_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_ADLS_AK_2_accountKey": {
+						"value": "[parameters('LS_ADLS_AK_2_accountKey')]"
+					},
+					"LS_ABLB_AK_properties_typeProperties_sasUri_secretName": {
+						"value": "[parameters('LS_ABLB_AK_properties_typeProperties_sasUri_secretName')]"
+					},
+					"LS_ADLS_AK_2_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_AK_2_properties_typeProperties_url')]"
+					},
+					"LS_ASQL_AK_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_ASQL_AK_properties_typeProperties_connectionString_secretName')]"
+					},
+					"LS_ASQL_DATAMART_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_ASQL_DATAMART_properties_typeProperties_connectionString_secretName')]"
+					},
+					"LS_SS_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_SS_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mentoring-adf-ka_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "mentoring-adf-ka_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'mentoring-adf-ka_ArmTemplate_1')]"
+			]
+		}
+	]
+}
