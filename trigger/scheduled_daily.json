@@ -1,0 +1,24 @@
+{
+	"name": "scheduled_daily",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "SQLS_to_Blob_incremintal",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2023-11-20T16:17:00",
+				"timeZone": "Central Asia Standard Time"
+			}
+		}
+	}
+}

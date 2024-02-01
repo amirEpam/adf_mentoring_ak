@@ -1,0 +1,60 @@
+{
+	"name": "DS_ADLS_MetaDriven",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_AK",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"src_column_delimiter": {
+				"type": "String"
+			},
+			"src_escape_character": {
+				"type": "String"
+			},
+			"src_quote_character": {
+				"type": "String"
+			},
+			"src_file_name": {
+				"type": "String"
+			},
+			"src_folder": {
+				"type": "String"
+			},
+			"src_container": {
+				"type": "String"
+			},
+			"src_encoding": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().src_file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().src_folder",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().src_container",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": {
+				"value": "@dataset().src_column_delimiter",
+				"type": "Expression"
+			},
+			"escapeChar": "\"",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

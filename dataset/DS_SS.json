@@ -1,0 +1,25 @@
+{
+	"name": "DS_SS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"InputTableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().InputTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
