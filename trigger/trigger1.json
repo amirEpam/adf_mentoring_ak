@@ -1,0 +1,17 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/movies/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/bb994079-71ea-46e2-b2b1-53b535ef74ab/resourceGroups/azure-mentoring-ak/providers/Microsoft.Storage/storageAccounts/azurementoringstorageakn",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

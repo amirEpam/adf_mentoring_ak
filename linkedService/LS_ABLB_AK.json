@@ -1,0 +1,19 @@
+{
+	"name": "LS_ABLB_AK",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"sasUri": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AKV_AK",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SAS1",
+				"secretVersion": "639a866c1eaa4ca3b3c009f13faa0c69"
+			}
+		}
+	}
+}

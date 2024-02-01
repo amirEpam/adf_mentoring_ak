@@ -1,0 +1,67 @@
+{
+	"name": "DS_ASQL_ControlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_AK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "src_container",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_folder",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_file_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_column_delimiter",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_encoding",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_escape_character",
+				"type": "nvarchar"
+			},
+			{
+				"name": "src_quote_character",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dst_schema_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "dst_table_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "diu_value",
+				"type": "nvarchar"
+			},
+			{
+				"name": "mapping",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "etl",
+			"table": "tControlMetadata_2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

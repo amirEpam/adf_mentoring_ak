@@ -1,0 +1,20 @@
+{
+	"name": "low_cost_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "fail",
+				"type": "Fail",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"message": "Amir",
+					"errorCode": "777"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-01-14T09:46:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

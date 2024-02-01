@@ -1,0 +1,34 @@
+{
+	"name": "DS_ASQL_tMovieStatus",
+	"properties": {
+		"description": "For module 8",
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_AK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "MovieStatusId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MovieStatusName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CreatedDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tMovieStatus"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

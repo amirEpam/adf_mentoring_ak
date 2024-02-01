@@ -1,0 +1,22 @@
+{
+	"name": "LS_SS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AKV_AK",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SSUser"
+			}
+		},
+		"connectVia": {
+			"referenceName": "ir-ak",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
